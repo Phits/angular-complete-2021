@@ -19,7 +19,7 @@ export class AuthService {
   constructor(private http: HttpClient) { }
 
   signUp(email: string, password: string) {
-    return this.http.post<AuthResponseData>('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyCR-zDnEkd3aTs-19HHrBAZKXPbIqKHu9Y', {
+    return this.http.post<AuthResponseData>('', {
       email: email,
       password: password,
       returnSecureToken: true
@@ -27,7 +27,7 @@ export class AuthService {
   }
 
   login(email: string, password: string) {
-    return this.http.post<AuthResponseData>('https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyCR-zDnEkd3aTs-19HHrBAZKXPbIqKHu9Y', {
+    return this.http.post<AuthResponseData>('', {
       email: email,
       password: password,
       returnSecureToken: true
