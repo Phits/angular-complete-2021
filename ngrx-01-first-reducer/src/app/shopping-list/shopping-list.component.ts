@@ -22,10 +22,9 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit() {
-    console.log("this.store.select('shoppingList') ", this.store.select('shoppingList'));
     this.ingredients = this.store.select('shoppingList');
-
-    console.log(" this.ingredients  ",  this.ingredients);
+    // If you don't want to use the async pipe in the template to covert observable
+    // this.store.select('shoppingList').subscribe();
 
     // // this.ingredients = this.slService.getIngredients();
     // this.subscription = this.slService.ingredientsChanged.subscribe(
