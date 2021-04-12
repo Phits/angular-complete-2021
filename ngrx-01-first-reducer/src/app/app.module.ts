@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { StoreModule } from '@ngrx/store';
-import { Effect, EffectsModule } from '@ngrx/effects';
+import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule} from '@ngrx/store-devtools';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
 
@@ -14,6 +14,7 @@ import { CoreModule } from './core.module';
 import * as fromAuth from './store/app.reducer';
 import { AuthEffects } from './auth/store/auth.effects';
 import { environment } from 'src/environments/environment';
+import { RecipeEffects } from './recipes/store/recipes.effects';
 
 // import { LoggingService } from './logging.service';
 
@@ -24,7 +25,7 @@ import { environment } from 'src/environments/environment';
     HttpClientModule,
     AppRoutingModule,
     StoreModule.forRoot(fromAuth.appReducer),
-    EffectsModule.forRoot([AuthEffects]),
+    EffectsModule.forRoot([AuthEffects, RecipeEffects]),
     StoreDevtoolsModule.instrument({logOnly: environment.production}),
     StoreRouterConnectingModule.forRoot(),
     SharedModule,
